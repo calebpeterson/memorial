@@ -1,0 +1,13 @@
+{
+  "name": "memorial",
+  "version": "1.0.0",
+  "description": "localhost tracking of metrics from the command line",
+  "main": "src/index.mjs",
+  "author": "caleb.peterson@zapier.com",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^9.2.0",
+    "sqlite": "^4.1.1",
+    "sqlite3": "^5.0.6"
+  }
+}
