@@ -30,3 +30,14 @@ export const check = async () => {
     console.log(`👍 ${METRICS_TABLE} exists`);
   }
 };
+
+export const record = async (value) => {
+  await db.run(`INSERT INTO ${METRICS_TABLE}(value) VALUES (?)`, value);
+};
+
+export const list = async () => {
+  const rows = await db.all(
+    `SELECT id, value FROM ${METRICS_TABLE} ORDER BY id`
+  );
+  return rows;
+};
