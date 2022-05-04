@@ -2,9 +2,15 @@
   "name": "memorial",
   "version": "1.0.0",
   "description": "localhost tracking of metrics from the command line",
-  "main": "src/index.mjs",
-  "author": "caleb.peterson@zapier.com",
   "license": "MIT",
+  "author": "caleb.peterson@zapier.com",
+  "main": "src/index.mjs",
+  "scripts": {
+    "dev:install": "yarn unlink && yarn link --force"
+  },
+  "bin": {
+    "memorial": "./src/index.mjs"
+  },
   "dependencies": {
     "asciichart": "^1.5.25",
     "commander": "^9.2.0",

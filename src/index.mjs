@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import os from "os";
 import { program } from "commander";
 import window from "window-size";
