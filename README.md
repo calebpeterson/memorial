@@ -1,9 +1,4 @@
-<div style="text-align: center; font-size: 72px;">🪦</div>
-<div style="text-align: center;"><h1>Memorial</h1></div>
-
-Localhost tracking of metrics from the command line.
-
-> I keep running that command to find remaining files to change; how much progress have I made?
+![](docs/memorial-banner.png)
 
 Ever wanted to keep track of how something has changed while you're working on it locally?
 
