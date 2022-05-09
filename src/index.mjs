@@ -3,18 +3,24 @@
 import os from "os";
 import { program } from "commander";
 import window from "window-size";
+import ora from "ora";
 import { check, list, purge, record } from "./db.mjs";
 import pkg from "./package.mjs";
 import { render } from "./chart.mjs";
 
 const getTerminalWidth = () => window.get().width;
+const getTerminalHeight = () => window.get().height;
 
 const print = async () => {
   const measurements = await list();
   const values = measurements.map(({ value }) => value);
 
   if (values.length > 0) {
-    render(values, { width: getTerminalWidth() });
+    render(values, {
+      width: getTerminalWidth(),
+      // terminal height minus a few lines for the rest of the print output
+      height: getTerminalHeight() - 6,
+    });
   } else {
     console.log("No measurements found");
   }
@@ -43,8 +49,18 @@ if (options.check) {
 }
 
 if (options.lines) {
+  const spinner = ora({
+    text: "Memorial is waiting for input…",
+    spinner: "aesthetic",
+    interval: 150,
+    color: "gray",
+  }).start();
+
   let count = 0;
   process.stdin.on("readable", () => {
+    spinner.stop();
+    spinner.clear();
+
     const chunk = process.stdin.read();
 
     if (chunk !== null) {

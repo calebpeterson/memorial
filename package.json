@@ -14,6 +14,7 @@
   "dependencies": {
     "asciichart": "^1.5.25",
     "commander": "^9.2.0",
+    "ora": "^6.1.0",
     "sqlite": "^4.1.1",
     "sqlite3": "^5.0.6",
     "window-size": "^1.1.1"
