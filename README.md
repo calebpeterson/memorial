@@ -9,7 +9,7 @@ Ever wanted to keep track of how something has changed while you're working on i
 
 ## Usage
 
-`<some command that outputs files/lines/etc... that still need to be changed> | memorial --lines --print`
+`<some command that outputs files/lines/etc...> | memorial --lines --print`
 
 Gives you the command's output followed by:
 
@@ -75,6 +75,6 @@ Purge all measurements and start with a blank slate:
 
 The `--lines` mode will simply count the number of lines of input passed to `memorial` on STDIN and consider the total for a given invocation to be the measurement to store.
 
-When to use:
+**When to use:**
 
 - using `grep` (or similar) to find all occurrences of the metric to measure
