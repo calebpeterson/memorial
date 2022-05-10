@@ -54,6 +54,16 @@ Show the current trend line at any time:
 
 Can be coupled with `--lines` to count the number of lines read on STDIN and then show the trendline when the input stream terminates.
 
+### Table
+
+Show the raw measurements at any time:
+
+```
+> memorial --table
+```
+
+Can be coupled with `--lines` to count the number of lines read on STDIN and then show the raw measurements when the input stream terminates.
+
 ### Purge
 
 Purge all measurements and start with a blank slate:
