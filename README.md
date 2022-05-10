@@ -6,7 +6,7 @@ Ever wanted to keep track of how something has changed while you're working on i
 
 `<some command that outputs files/lines/etc...> | memorial --lines --print`
 
-Gives you the command's output followed by:
+Gives you the original command followed by:
 
 ```
 original command output
@@ -14,18 +14,18 @@ original command output
 
 Latest measurement: 26 lines
 
-      26.00 ┼    ╭
-      22.75 ┤╭──╮│
-      19.50 ┤│  ││
-      16.25 ┤│  ││
-      13.00 ┤│  ╰╯
-       9.75 ┼╯
+      26.00 ┼   ╭
+      22.75 ┼──╮│
+      19.50 ┤  ││
+      16.25 ┤  ││
+      13.00 ┤  ╰╯
+       9.75 ┤
        6.50 ┤
        3.25 ┤
        0.00 ┤
 ```
 
-Do more work, run the command again and see the trend:
+Do more work, run the command again, piped into `memorial --lines --print` and see the trend:
 
 ```
 original command output
@@ -33,12 +33,12 @@ original command output
 
 Latest measurement: 24 lines
 
-      26.00 ┼    ╭╮
-      22.75 ┤╭──╮││╭╮      ╭
-      19.50 ┤│  │││││╭╮  ╭─╯
-      16.25 ┤│  ││││╰╯│ ╭╯
-      13.00 ┤│  ╰╯╰╯  ╰─╯
-       9.75 ┼╯
+      26.00 ┼   ╭╮
+      22.75 ┼──╮│╰─╮
+      19.50 ┤  ││  │╭╮
+      16.25 ┤  ││  ╰╯│
+      13.00 ┤  ╰╯    ╰─
+       9.75 ┤
        6.50 ┤
        3.25 ┤
        0.00 ┤
@@ -46,7 +46,7 @@ Latest measurement: 24 lines
 
 ### Print
 
-Show the current trendline at any time:
+Show the current trend line at any time:
 
 ```
 > memorial --print
