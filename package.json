@@ -1,6 +1,6 @@
 {
   "name": "memorial",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "localhost tracking of development metrics from the command line",
   "license": "MIT",
   "author": "caleb.peterson@zapier.com",
