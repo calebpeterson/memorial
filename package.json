@@ -1,6 +1,6 @@
 {
   "name": "memorial",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "localhost tracking of development metrics from the command line",
   "license": "MIT",
   "author": "caleb.peterson@zapier.com",
@@ -14,6 +14,7 @@
   "dependencies": {
     "asciichart": "^1.5.25",
     "commander": "^9.2.0",
+    "console.table": "^0.10.0",
     "ora": "^6.1.0",
     "sqlite": "^4.1.1",
     "sqlite3": "^5.0.6",

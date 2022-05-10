@@ -4,6 +4,8 @@ import os from "os";
 import { program } from "commander";
 import window from "window-size";
 import ora from "ora";
+import "console.table";
+
 import { check, list, purge, record } from "./db.mjs";
 import pkg from "./package.mjs";
 import { render } from "./chart.mjs";
@@ -26,6 +28,21 @@ const print = async () => {
   }
 };
 
+const table = async () => {
+  const measurements = await list();
+
+  if (measurements.length > 0) {
+    const rows = measurements.map(({ id, value }, index) => ({
+      index,
+      id,
+      value,
+    }));
+    console.table(rows);
+  } else {
+    console.log("No measurements found");
+  }
+};
+
 program
   .name(pkg.name)
   .description(pkg.description)
@@ -33,7 +50,8 @@ program
   .option("-p, --purge", "purge all measurements")
   .option("-c, --check", "check that the measurements file exists")
   .option("-l, --lines", "count lines received on STDIN as the metric")
-  .option("-p, --print", "print all recorded measurements")
+  .option("-p, --print", "print chart of all recorded measurements")
+  .option("-t, --table", "print table of all recorded measurements")
   .parse(process.argv);
 
 process.stdin.setEncoding("utf8");
@@ -81,10 +99,18 @@ if (options.lines) {
       await print();
     }
 
+    if (options.table) {
+      await table();
+    }
+
     process.exit(0);
   });
 }
 
 if (!options.lines && options.print) {
   await print();
+}
+
+if (!options.lines && options.table) {
+  await table();
 }
