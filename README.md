@@ -31,7 +31,7 @@ Do more work, run the command again, piped into `memorial --lines --print` and s
 original command output
 ...
 
-Latest measurement: 24 lines
+Latest measurement: 13 lines
 
       26.00 ┼   ╭╮
       22.75 ┼──╮│╰─╮
